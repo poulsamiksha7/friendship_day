@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>⭐Happy Friendship Day⭐</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="sky">
+    <div class="moon"></div>
+    <div class="sun"></div>
+    <div class="stars">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <div class="band-container">
+    <div class="band" id="toggleButton">
+      👩🏼‍🤝‍👩🏻 HAPPY FRIENDSHIP DAY 🩵
+    </div>
+    <div class="message">
+      From Your Friend & Soul Sister Samiksha 🌼<br />
+      May your life be filled with loyal friends and glowing love
+    </div>
+  </div>
+
+  <script>
+    const toggleButton = document.getElementById('toggleButton');
+    const body = document.body;
+
+    toggleButton.addEventListener('click', () => {
+      body.classList.toggle('day');
+      body.classList.toggle('night');
+    });
+
+    body.classList.add('night');
+  </script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  transition: background 2s ease-in-out;
+  font-family: "Love Ya Like A Sister", cursive;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+
+body.night {
+  background: radial-gradient(ellipse at bottom, #0b0c1a 0%, #0d0d2b 100%);
+}
+
+
+body.day {
+  background: linear-gradient(to top, #87ceeb, #fffacd);
+}
+
+.sky {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+
+.moon {
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, #fdf6e3, #f0e68c);
+  border-radius: 50%;
+  box-shadow: 0 0 60px rgba(255, 255, 224, 0.5);
+  transition: opacity 1.5s ease;
+  z-index: 0;
+}
+
+body.day .moon {
+  opacity: 0;
+}
+
+
+.sun {
+  position: absolute;
+  top: 10%;
+  right: 15%;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, #ffe066, #ffcc33);
+  border-radius: 50%;
+  box-shadow: 0 0 60px rgba(255, 204, 0, 0.6);
+  transition: opacity 1.5s ease;
+  opacity: 0;
+  z-index: 0;
+}
+
+body.day .sun {
+  opacity: 1;
+}
+
+.stars span {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 5px white;
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+.stars span:nth-child(1) { top: 20%; left: 25%; width: 4px; height: 4px; }
+.stars span:nth-child(2) { top: 40%; left: 70%; width: 3px; height: 3px; }
+.stars span:nth-child(3) { top: 60%; left: 45%; width: 2px; height: 2px; }
+.stars span:nth-child(4) { top: 30%; left: 80%; width: 3px; height: 3px; }
+.stars span:nth-child(5) { top: 10%; left: 55%; width: 2px; height: 2px; }
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.2; }
+}
+
+body.day .stars {
+  display: none;
+}
+
+
+.band-container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.band {
+  display: inline-block;
+  background: radial-gradient(circle, #ffe066, #cbb881);
+  padding: 15px 40px;
+  border-radius: 50px;
+  color: linen;
+  font-weight: bold;
+  font-size: 1.5rem;
+  box-shadow: 0 0 30px rgba(179, 1, 25, 0.675);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.band:hover {
+  box-shadow: 0 0 30px rgb(11, 111, 193);
+  transform: scale(1.1);
+}
+
+
+.message {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #4e342e;
+  background: #fff8e1;
+  padding: 15px;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 20px #6c1d05;
+  border-radius: 10px;
+}
